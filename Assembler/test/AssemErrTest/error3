@@ -1,0 +1,12 @@
+SAMPLE   ORI 0       ;comments
+         EXT Pnum,Qnum 
+         ENT X,Y,Z,A,B  
+Begin    LD  0,Pnum     
+         ADD 2,Qnum  
+         BR  0,0  
+X        NMD 524287  
+Y        NMD 1
+Z        NMD 2
+A        NMD 3
+B        NMD 4             
+         END Begin

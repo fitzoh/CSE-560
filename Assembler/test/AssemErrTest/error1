@@ -1,0 +1,7 @@
+SAMPLE   ORI 1       ;comments
+         EXT Pnum 
+         ENT Num 
+Begin    LD  0,Pnum      
+         BR  0,0  
+Num      NMD 524287               
+         END Begin 

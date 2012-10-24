@@ -1,0 +1,9 @@
+Main     ORI        ;comments
+Begin    LD  0,1     
+         ADD 2,0  
+         BR  0,0   
+X        NMD 524287  
+Y        NMD 1
+         ENT X 
+         ENT Y          
+         END Begin

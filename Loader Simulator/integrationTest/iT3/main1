@@ -1,0 +1,19 @@
+Main     ORI 
+         EXT Pnum,Lib 
+         ENT Num 
+         BRS 3,Pnum 
+         LDI 3,1 
+         BR  3,Num(3) 
+Num      NMD 36 
+akaNum   EQU Num 
+         LD  3,Num 
+         ADD 3,=-1 
+         ST  3,akaNum 
+         BRS 3,Lib  
+         BR  2,beyond 
+work     RES 6 
+beyond   BR  HALT,Lib(HALT) 
+         CCD aA 
+         RES 4 
+HALT     EQU 0 
+         END Main 

@@ -1,0 +1,11 @@
+Main     ORI 102 
+         EXT Pnum 
+         ENT NUM 
+         ENT X 
+         ENT Y 
+Begin    LDI 0,Pnum  ;comment
+         BR  0,0     ;comment
+NUM      NMD 7  
+X        NMD 9 
+Y        CCD ab  
+         END Begin

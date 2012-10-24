@@ -1,0 +1,10 @@
+Main     ORI 26      ;comment
+X        NMD 8       ;T1A00008
+Y        NMD 2       ;T1B00002
+         EXT Pnum  
+         ENT Num   
+Begin    LD  0,X 
+         DIV 0,Y 
+         BR  0,0 
+Num      NMD 4500         
+         END Begin

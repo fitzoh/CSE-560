@@ -1,0 +1,9 @@
+SAMPLE   ORI 0       ;comments
+         EXT 
+         ENT X,Y 
+Begin    LD  0,1      
+         ADD 2,2    
+         BR  0,0  
+X        NMD 524287  
+Y        NMD 1           
+         END Begin

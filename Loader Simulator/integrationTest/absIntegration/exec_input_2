@@ -1,0 +1,123 @@
+CALGCD   ORI 8        ; This program handles the IO surrounding the calculation of the greatest 
+NUM1     RES 1        ; common divisor (GCD) of two integers.  It calls the GCD subroutine.
+NUM2     RES 1
+RSLT     RES 1
+MSTNEG   NMD -524288
+MAG      CCD Ma
+         CCD gn
+         CCD it
+         CCD ud
+         CCD e 
+         CCD of
+         NMD 131072   ; space character followed by null character
+ISTOO    CCD  i
+         CCD s 
+         CCD to
+         CCD o 
+         CCD la
+         CCD rg
+         CCD e.
+         NMD 0
+MSG1     CCD Th
+         CCD e 
+         CCD GC
+         CCD D 
+         CCD of
+         NMD 131072   ; space character followed by null character
+MSG2     CCD  a
+         CCD nd
+         NMD 131072   ; space character followed by null character
+MSG3     CCD  i
+         CCD s 
+         NMD 0        ;null character
+MSG4     NMD 188416   ;'.' followed by null character
+         IO  0,NUM1
+         IO  0,NUM2   ; negate negatives
+         LD  1,NUM1
+         BRN 1,FIX1
+         BR  2,NEG2   ;a pc-relative branch
+FIX1     SUB 1,MSTNEG
+         BRZ 1,MAGLRG
+         LD  1,NUM1
+         SUB 1,NUM1
+         SUB 1,NUM1
+NEG2     LD  2,NUM2
+         BRN 2,FIX2
+         BR  2,TST0
+FIX2     SUB 2,MSTNEG
+         BRZ 2,MAGLRG
+         LD  2,NUM2
+         SUB 2,NUM2
+         SUB 2,NUM2   ; determine if both R1 and R2 are zero
+TST0     BRZ 1,TST2
+         BR  3,OKAY
+TST2     BRZ 2,BOTH0  
+OKAY     BRS 3,GCD    ; call GCD
+         ST  1,RSLT   ; store result
+         LDI 1,MSG1   ; place address of string into R1
+         BRS 3,PNTS   ; call PNTS, Print Null-Terminated String
+         IO  2,NUM1
+         LDI 1,MSG2
+         BRS 3,PNTS
+         IO  2,NUM2
+         LDI 1,MSG3
+         BRS 3,PNTS
+         IO  2,RSLT
+         LDI 1,MSG4
+         BRS 3,PNTS
+         BR  0,0 halt
+MAGLRG   LDI 1,MAG    ; place address of string into R1
+         BRS 3,PNTS
+         IO  2,MSTNEG
+         LDI 1,ISTOO
+         BRS 3,PNTS
+         BR  0,0      ; halt
+BOTH0    LDI 1,BTHM
+         BRS 3,PNTS 
+         BR  0,0      ; halt
+BTHM     CCD GC       ; subroutine int GCD(a,b)
+         CCD D        ; requires: 0 <= a and 0 <= b and not (a = 0 and b = 0)
+         CCD of       ; ensures: GCD will leave the return value, the greatest common divisor of
+         CCD  0       ;          a and b in register R1
+         CCD  a       ; caller should leave parameter a in register R1
+         CCD nd       ; caller should leave parameter b in register R2
+         CCD  0       ; caller should leave return address in register R3
+         CCD  i
+         CCD s 
+         CCD no
+         CCD t 
+         CCD de
+         CCD fi
+         CCD ne
+         CCD d.
+         NMD 0      
+GCD      BRZ 2,GCDDN  ; while 0 < b
+         ST  2,GCDC   ;c = b
+         ST  1,GCDA    
+         DIV 1,GCDC
+         MUL 1,GCDC
+         ST  1,GCDSML
+         LD  2,GCDA
+         SUB 2,GCDSML  ;b = a mod b
+         LD  1,GCDC    ;a = c
+         BR  3,GCD     ;end while
+;Extra Extra Extra Extra comments for testing purpose               
+GCDDN    BR  3,0(3)    ;use return address in R3 to return to caller
+GCDC     RES 1
+GCDA     RES 1
+GCDSML   RES 1
+GCDRA    RES 1       ; implementation uses R0 to hold the word of the string
+UPBYT    NMD -4096
+;HELLO TESTER!!!!!!!!!!!!!
+PNTS     LD  0,0(1)  ;R0 now contains a word of the string
+         AND 0,UPBYT ;if upper byte is null, make R0 zero
+         BRZ 0,0(3)  ;return to caller if R0 is zero
+         IO  3,0(0)  ;output character in upper byte of R0
+         LD  0,0(1)  ;R0 now contains the same word of the string
+         SHL 0,8     ;get to next character
+         AND 0,UPBYT ;if upper byte is null, make R0 zero
+         BRZ 0,0(3)  ;return to caller if R0 is zero
+         IO  3,0(0)  ;output character in upper byte of R0
+         ADD 1,=1    ;the literal, =1, refers to a location in memory where there is the value 1 stored
+         BR  3,PNTS  ;having incremented the address by 1, go back and print up to the next two characters
+         END 

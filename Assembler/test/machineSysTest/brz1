@@ -1,0 +1,9 @@
+Main     ORI 171     ;comment
+X        NMD 0 
+         EXT Pnum 
+         ENT Y 
+Begin    BRZ 0,Pnum 
+         RES 1         
+         BR  0,0 
+Y        CCD He   
+         END Begin

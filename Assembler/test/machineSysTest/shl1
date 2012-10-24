@@ -1,0 +1,9 @@
+Main     ORI 10      ;comment
+X        NMD 7       ;T0A00007
+         EXT Pnum 
+         ENT Num 
+Begin    LD  0,X  
+         SHL 0,Pnum 
+         BR  0,0 
+Num      NMD -48          
+         END Begin

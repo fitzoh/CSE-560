@@ -1,0 +1,17 @@
+Main     ORI 76  
+W        NMD 32 
+         EXT Pnum 
+         EXT Qnum 
+         EXT Rnum 
+         ENT X 
+         ENT Y 
+         ENT Z 
+Reg      EQU 2 
+Start    LD  Reg,X 
+         ST  Reg,Pnum 
+         ST  Reg,Qnum 
+         ST  Reg,Rnum 
+X        NMD 6 
+Y        NMD 10 
+Z        NMD 15       
+         END Start 

@@ -1,0 +1,9 @@
+Main     ORI 58      ;comment
+X        NMD 0 
+         EXT Pnum 
+         ENT Num 
+Begin    BRS 0,Pnum 
+Y        RES 3         
+         BR  0,0 
+Num      NMD 9         
+         END Begin

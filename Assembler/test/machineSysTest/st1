@@ -1,0 +1,10 @@
+Main     ORI 0       ;comment
+X        NMD 222718  
+         EXT Pnum 
+         ENT Num 
+Begin    LD  0,X 
+         ST  0,1 
+         ST  1,Pnum 
+         BR  0,0  
+Num      NMD -10            
+         END Begin

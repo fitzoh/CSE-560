@@ -1,0 +1,10 @@
+Main     ORI 0  
+X        NMD 1 
+Y        NMD 196608 
+         EXT Pnum 
+         ENT Num    
+Begin    LD  1,Y 
+         ST  1,Pnum 
+         PTC 2 
+Num      CCD Ze              
+         END Begin

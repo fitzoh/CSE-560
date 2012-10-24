@@ -1,0 +1,10 @@
+Main     ORI 0       ;H02SA    00??
+X        NMD 393216  ;
+Y        NMD 5       ;
+         EXT Pnum 
+         ENT Num 
+Begin    LD  0,X 
+         SHR 0,Pnum 
+         BR  0,0 
+Num      NMD 524287         
+         END Begin

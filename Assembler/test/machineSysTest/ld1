@@ -1,0 +1,9 @@
+Main     ORI 20 
+         EXT Pnum 
+         ENT X 
+         ENT Y 
+Reg      EQU 0 
+Begin    LD  Reg,Pnum 
+X        NMD 32 
+Y        NMD 45 
+         END Begin

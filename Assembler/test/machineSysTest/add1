@@ -1,0 +1,11 @@
+Main     ORI 0       ;comments
+         EXT Pnum 
+         EXT Qnum 
+         ENT X 
+         ENT Y 
+Begin    LD  0,Pnum     
+         ADD 2,Qnum  
+         BR  0,0  
+X        NMD 524287  
+Y        NMD 1             
+         END Begin

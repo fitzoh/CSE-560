@@ -1,0 +1,9 @@
+Main     ORI 0    
+         EXT Pnum 
+         ENT Num 
+Begin    LD  1,Y 
+         OR  1,Pnum   
+         BR  0,0  
+Y        NMD 2 
+Num      NMD 55 
+         END Begin

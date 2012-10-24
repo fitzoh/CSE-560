@@ -1,0 +1,9 @@
+Main     ORI 188 
+X        EQU 1 
+Reg      EQU X 
+         EXT Pnum 
+         ENT Num 
+Start    LD  Reg,X 
+         ST  Reg,Pnum 
+Num      CCD aa       
+         END Start 

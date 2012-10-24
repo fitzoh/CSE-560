@@ -1,0 +1,7 @@
+Main     ORI 86  
+         EXT Pnum 
+         ENT Z  
+Begin    IO  2,Pnum    
+         BR  0,0 
+Z        NMD 49            
+         END Begin

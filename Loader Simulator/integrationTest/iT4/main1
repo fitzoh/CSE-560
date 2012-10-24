@@ -1,0 +1,16 @@
+Main     ORI 
+BUFF     RES 9 
+         EXT Pnum 
+         EXT Qnum 
+         ENT Num1,Num2,Num3,Num4 
+ACC      EQU 1 
+         LD  1,=1 
+         ADD ACC,Pnum 
+         ST  1,BUFF(1) 
+         LD  2,Qnum 
+         BR  0,0  
+Num1     NMD 6 
+Num2     NMD -5 
+Num3     CCD ec 
+Num4     CCD Aa      
+         END     

@@ -1,0 +1,7 @@
+Main     ORI    ;comments
+         ENT Num 
+Begin    LD  0,1     
+         ADD 2,Pnum  
+Num      BR  0,0 
+         EXT Pnum 
+         END Begin 

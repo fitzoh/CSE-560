@@ -1,0 +1,7 @@
+Sample   ORI     
+X        NMD 1  
+Y        NMD 1     
+Begin    LD  0,X     
+         ADD 2,Y  
+         BR  0,0  
+         END Begin

@@ -1,0 +1,7 @@
+SAMPLE   ORI 0       ;comments
+         EXT Pnum,Qnum
+         ENT  
+Begin    LD  0,Pnum     
+         ADD 2,Qnum  
+         BR  0,0     
+         END Begin

@@ -1,0 +1,9 @@
+Main     ORI 
+         EXT Pnum 
+         ENT Num 
+         BRS 3,Pnum 
+         LD  1,=10
+         LD  2,=3
+         BR  0,0(0) 
+Num      NMD 7 
+         END 

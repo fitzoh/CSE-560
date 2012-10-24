@@ -1,0 +1,8 @@
+Main     ORI 17        
+X        NMD 1 
+         EXT Pnum 
+         ENT Num     
+Begin    GTC 1   
+         ST  0,Pnum 
+Num      NMD -5          
+         END Begin 

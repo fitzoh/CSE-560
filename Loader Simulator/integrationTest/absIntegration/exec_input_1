@@ -1,0 +1,20 @@
+SAMPLE   ORI 100      ;in hex: 64
+BF0      RES 1
+TWO      NMD 2
+         IO  0,BF0    ;numeric input
+         IO  1,0(0)   ;character input into R0
+         IO  2,BF0    ;numeric output
+         SHL 0,8      ;prepare input of second character
+         IO  1,0(0)   ;input second character into R0
+         SHL 0,4      ;prepare output of first character
+         IO  3,0(0)   ;first character output from R0
+         SHL 0,8      ;prepare output of second character
+         IO  3,0(0)   ;second character output from R0
+         LD  1,ONE    ;R1 <-- 1
+         LD  0,ONE(1) ;R0 <-- 5
+         ADD 1,TWO    ;R1 <-- R1 + 2
+         SHL 0,2(1)   ;shifts R0 left 5 bits, yielding 5*2^5=5*32=160
+         BR  0,0(3)   ;halt and dump both memory and registers
+ONE      NMD 1
+         NMD 5
+         END 

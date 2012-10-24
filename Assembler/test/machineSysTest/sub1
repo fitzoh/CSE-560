@@ -1,0 +1,9 @@
+Main     ORI 121       
+X        NMD 5  
+         EXT Pnum 
+         ENT Num 
+Begin    LD  0,X 
+         SUB 0,Pnum  
+         BR  0,0 
+Num      NMD 25 
+         END Begin

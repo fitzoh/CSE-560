@@ -1,0 +1,10 @@
+Lib      ORI 
+         EXT Num1,Num2,Num3,Num4 
+         ENT Pnum
+         ENT Qnum 
+Pnum     IO  2,Num2
+Qnum     BR  3,0(3) 
+         LD  1,Num3 
+         LD  3,Num4 
+         ST  1,Num1   
+         END                   

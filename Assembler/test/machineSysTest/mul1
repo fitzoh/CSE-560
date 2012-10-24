@@ -1,0 +1,9 @@
+Main     ORI 18  
+         EXT Pnum 
+         ENT Num 
+Begin    LD  0,X  
+         MUL 0,Pnum 
+         BR  0,0 
+X        NMD 5  
+Num      NMD 524286         
+         END Begin

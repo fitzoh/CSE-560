@@ -1,0 +1,10 @@
+Main     ORI 0       ;comment
+         EXT PNUM 
+X        NMD -1 
+         ENT Num 
+Begin    LD  1,X 
+         BRN 1,PNUM 
+Y        RES 2 
+         BR  0,0     ;comment
+Num      NMD 6         
+         END Begin

@@ -1,0 +1,8 @@
+Lib      ORI 
+         EXT Num 
+         ENT Pnum,SS 
+         EXT Main,work 
+Pnum     IO  NumOut,Num 
+SS       RET 3 
+NumOut   EQU 2 
+         END SS 

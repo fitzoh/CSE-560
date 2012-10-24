@@ -1,0 +1,10 @@
+Main     ORI 0       ;H02SAMPLE0005
+         EXT Pnum 
+         ENT X 
+         ENT Y 
+Begin    LD  1,Pnum  ;T0201001
+         AND 1,X     ;T0381000
+         BR  0,0     ;T04C0000
+X        NMD -2      ;T00FFFFE
+Y        NMD 255     ;T01000FF         
+         END Begin

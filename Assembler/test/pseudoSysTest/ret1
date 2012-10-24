@@ -1,0 +1,10 @@
+Main     ORI 49 
+Reg      EQU 2 
+Char     CCD CS 
+         EXT Pnum 
+         ENT Num 
+Start    LD  Reg,Char 
+         ST  Reg,Pnum 
+Num      NMD -1
+         RET Reg           
+         END Start 
